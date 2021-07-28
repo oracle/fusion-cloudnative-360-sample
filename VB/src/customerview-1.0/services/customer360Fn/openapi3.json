@@ -1,0 +1,1729 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Customer360",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://cuihri73ijq5aaiwhxbs3cj2ni.apigateway.ap-sydney-1.oci.customer-oci.com/customer360",
+            "description": "Customer360",
+            "x-vb": {
+                "forceProxy": "always"
+            }
+        }
+    ],
+    "paths": {
+        "/verify": {
+            "get": {
+                "operationId": "getVerify",
+                "parameters": [
+                    {
+                        "name": "loanid",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetVerify"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getVerify/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getOne"
+                }
+            }
+        },
+        "/loan": {
+            "get": {
+                "operationId": "getLoan",
+                "parameters": [
+                    {
+                        "name": "loanid",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "300000173301090"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "john.dunbar_zbic@oracledemos.com"
+                        }
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetLoan"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getLoan/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getOne"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetVerify": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetLoan": {
+                "type": "object",
+                "properties": {
+                    "CompanyName_c": {
+                        "type": "string"
+                    },
+                    "OwnerResourcePartyId": {
+                        "type": "integer"
+                    },
+                    "ConflictId": {
+                        "type": "integer"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Opportunity_Id_ProjectToBid": {
+                        "type": "string"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "CrmCurrencyCode": {
+                        "type": "string"
+                    },
+                    "ProposalDueDate_c": {
+                        "type": "string"
+                    },
+                    "ProjectManagerEmail_c": {
+                        "type": "string"
+                    },
+                    "Campus_c": {
+                        "type": "string"
+                    },
+                    "Second_Last_Update_Of_Close_Da_c": {
+                        "type": "string"
+                    },
+                    "ApplicationStage_c": {
+                        "type": "string"
+                    },
+                    "SourceType": {
+                        "type": "string"
+                    },
+                    "BookableIncome_c": {
+                        "type": "string"
+                    },
+                    "EffectiveDate": {
+                        "type": "string"
+                    },
+                    "EstCompletionDate_c": {
+                        "type": "string"
+                    },
+                    "FullContractIncome_c": {
+                        "type": "string"
+                    },
+                    "ReasonForNoBid_c": {
+                        "type": "string"
+                    },
+                    "Practice_c": {
+                        "type": "string"
+                    },
+                    "OpportunityType1_cMeaning": {
+                        "type": "string"
+                    },
+                    "ParentOpportunity_c": {
+                        "type": "string"
+                    },
+                    "CrmConversionRate": {
+                        "type": "integer"
+                    },
+                    "CurrentAcademicYear_cMeaning": {
+                        "type": "string"
+                    },
+                    "ProjectName_c": {
+                        "type": "string"
+                    },
+                    "GiftType_cMeaning": {
+                        "type": "string"
+                    },
+                    "FullContractRevenue_c": {
+                        "type": "string"
+                    },
+                    "SalesChannelCd": {
+                        "type": "string"
+                    },
+                    "XSD_c": {
+                        "type": "string"
+                    },
+                    "IBAssetNumber": {
+                        "type": "string"
+                    },
+                    "SalesMethodId": {
+                        "type": "integer"
+                    },
+                    "LikelihoodToWinBid_c": {
+                        "type": "string"
+                    },
+                    "BdgtAmtCurcyCd": {
+                        "type": "string"
+                    },
+                    "IBAssetSerialNumber": {
+                        "type": "string"
+                    },
+                    "AssociationFromSubTab_c": {
+                        "type": "boolean"
+                    },
+                    "ParentProject_c": {
+                        "type": "string"
+                    },
+                    "PPMProjectId_c": {
+                        "type": "string"
+                    },
+                    "Country_c": {
+                        "type": "string"
+                    },
+                    "OpportunityType1_c": {
+                        "type": "string"
+                    },
+                    "CurrentGPA_c": {
+                        "type": "string"
+                    },
+                    "Fourth_Last_Update_Of_Close_Da_c": {
+                        "type": "string"
+                    },
+                    "Campus_cMeaning": {
+                        "type": "string"
+                    },
+                    "AccountPartyNumber": {
+                        "type": "integer"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "DownsideAmount": {
+                        "type": "integer"
+                    },
+                    "OpportunityContact": {
+                        "type": "string"
+                    },
+                    "HighSchoolType_cMeaning": {
+                        "type": "string"
+                    },
+                    "OpportunityTypeTest_c": {
+                        "type": "string"
+                    },
+                    "Third_Last_Update_Of_Close_Dat_c": {
+                        "type": "string"
+                    },
+                    "CustomerAccountId": {
+                        "type": "string"
+                    },
+                    "WinProb": {
+                        "type": "integer"
+                    },
+                    "AssetNumber": {
+                        "type": "string"
+                    },
+                    "NewAccount_c": {
+                        "type": "boolean"
+                    },
+                    "Revenue": {
+                        "type": "integer"
+                    },
+                    "Margin_c": {
+                        "type": "string"
+                    },
+                    "AwardedToBid_Id_c": {
+                        "type": "string"
+                    },
+                    "OpportunityTypeSW_cMeaning": {
+                        "type": "string"
+                    },
+                    "Alumnus_c": {
+                        "type": "boolean"
+                    },
+                    "SalesMethod": {
+                        "type": "string"
+                    },
+                    "RecommendedAction": {
+                        "type": "string"
+                    },
+                    "EstimatedTotalBooking_c": {
+                        "type": "string"
+                    },
+                    "Longitude_c": {
+                        "type": "string"
+                    },
+                    "LastUpdatedBy": {
+                        "type": "string"
+                    },
+                    "QuotaFactor": {
+                        "type": "integer"
+                    },
+                    "EstimateCommission_c": {
+                        "type": "boolean"
+                    },
+                    "RequestClosure_c": {
+                        "type": "boolean"
+                    },
+                    "BookableRevenue_c": {
+                        "type": "string"
+                    },
+                    "DecisionLevelCode": {
+                        "type": "string"
+                    },
+                    "CurrencyCode": {
+                        "type": "string"
+                    },
+                    "LastUpdateDate": {
+                        "type": "string"
+                    },
+                    "SATScore_c": {
+                        "type": "string"
+                    },
+                    "RFPReleaseDate_c": {
+                        "type": "string"
+                    },
+                    "ProjectWorkPlan_c": {
+                        "type": "string"
+                    },
+                    "TypesOfReferal_c": {
+                        "type": "string"
+                    },
+                    "GiftClubMembership_cMeaning": {
+                        "type": "string"
+                    },
+                    "StgOrder": {
+                        "type": "integer"
+                    },
+                    "ACTScore_c": {
+                        "type": "string"
+                    },
+                    "HighSchoolType_c": {
+                        "type": "string"
+                    },
+                    "HighSchoolName_c": {
+                        "type": "string"
+                    },
+                    "EarlyAdmissions_c": {
+                        "type": "boolean"
+                    },
+                    "GSECode_c": {
+                        "type": "integer"
+                    },
+                    "AssetId": {
+                        "type": "string"
+                    },
+                    "OpportunityTypeSW_c": {
+                        "type": "string"
+                    },
+                    "DesignationInterest_cMeaning": {
+                        "type": "string"
+                    },
+                    "Assets": {
+                        "type": "object",
+                        "properties": {
+                            "Id": {
+                                "type": "integer"
+                            },
+                            "ConflictId": {
+                                "type": "integer"
+                            },
+                            "CorpCurrencyCode": {
+                                "type": "string"
+                            },
+                            "RecordName": {
+                                "type": "string"
+                            },
+                            "AssetType_c": {
+                                "type": "string"
+                            },
+                            "SundryCollection_c": {
+                                "type": "string"
+                            },
+                            "LastUpdatedBy": {
+                                "type": "string"
+                            },
+                            "CurrencyCode": {
+                                "type": "string"
+                            },
+                            "UserLastUpdateDate": {
+                                "type": "string"
+                            },
+                            "LastUpdateDate": {
+                                "type": "string"
+                            },
+                            "OptyId_c": {
+                                "type": "integer"
+                            },
+                            "Type_c": {
+                                "type": "string"
+                            },
+                            "MotorVehiclesCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "Make_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "Model_c": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "PresentValue_c": {
+                                                    "type": "integer"
+                                                },
+                                                "YearOfManufacture_c": {
+                                                    "type": "integer"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "Assets_Id_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "OraZcxOwner_c": {
+                                "type": "integer"
+                            },
+                            "CurcyConvRateType": {
+                                "type": "string"
+                            },
+                            "CreationDate": {
+                                "type": "string"
+                            },
+                            "CreatedBy": {
+                                "type": "string"
+                            },
+                            "SelectedRow": {
+                                "type": "string"
+                            },
+                            "LastUpdateLogin": {
+                                "type": "string"
+                            },
+                            "AccountCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "Balance_c": {
+                                                    "type": "integer"
+                                                },
+                                                "FinancialInstitutionName_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "Assets_Id_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "HomeAndInvestmentPropertiesCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "PresentValue_c": {
+                                                    "type": "integer"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "Address_c": {
+                                                    "type": "string"
+                                                },
+                                                "Assets_Id_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "RecordNumber": {
+                                "type": "integer"
+                            },
+                            "OraZcxOwner_Id_c": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "EstStartDate_c": {
+                        "type": "string"
+                    },
+                    "PreQualDueDate_c": {
+                        "type": "string"
+                    },
+                    "AcademicDistinctions_c": {
+                        "type": "string"
+                    },
+                    "SalesAccountUniqueName": {
+                        "type": "string"
+                    },
+                    "DealHorizonCode": {
+                        "type": "string"
+                    },
+                    "ContractVersion_c": {
+                        "type": "string"
+                    },
+                    "ContractId_c": {
+                        "type": "string"
+                    },
+                    "CreationDate": {
+                        "type": "string"
+                    },
+                    "PotentialGiftValue_cCurcyConvRate": {
+                        "type": "integer"
+                    },
+                    "TargetPartyId": {
+                        "type": "integer"
+                    },
+                    "PrimaryCompetitorId": {
+                        "type": "string"
+                    },
+                    "OpportunityType_cMeaning": {
+                        "type": "string"
+                    },
+                    "LineOfBusinessCode": {
+                        "type": "string"
+                    },
+                    "PrimaryPartnerCompanyNumber": {
+                        "type": "string"
+                    },
+                    "BatchTag": {
+                        "type": "string"
+                    },
+                    "EnrollmentTerm_c": {
+                        "type": "string"
+                    },
+                    "PrimaryRevenueId": {
+                        "type": "integer"
+                    },
+                    "AwardDate_c": {
+                        "type": "string"
+                    },
+                    "PotentialGiftValue_cCurrencyCode": {
+                        "type": "string"
+                    },
+                    "RequestedDueDate_c": {
+                        "type": "string"
+                    },
+                    "ApplicationType_cMeaning": {
+                        "type": "string"
+                    },
+                    "ApplicationType_c": {
+                        "type": "string"
+                    },
+                    "PartnerSelected_c": {
+                        "type": "string"
+                    },
+                    "ParentProject_Id_c": {
+                        "type": "string"
+                    },
+                    "PrimaryPartnerOrgPartyName": {
+                        "type": "string"
+                    },
+                    "RegistrationStatus": {
+                        "type": "string"
+                    },
+                    "RcmndWinProb": {
+                        "type": "integer"
+                    },
+                    "SourceCampaign_c": {
+                        "type": "string"
+                    },
+                    "HintCode": {
+                        "type": "string"
+                    },
+                    "Income": {
+                        "type": "object",
+                        "properties": {
+                            "Id": {
+                                "type": "integer"
+                            },
+                            "ConflictId": {
+                                "type": "integer"
+                            },
+                            "CorpCurrencyCode": {
+                                "type": "string"
+                            },
+                            "RecordName": {
+                                "type": "string"
+                            },
+                            "LastUpdatedBy": {
+                                "type": "string"
+                            },
+                            "CurrencyCode": {
+                                "type": "string"
+                            },
+                            "UserLastUpdateDate": {
+                                "type": "string"
+                            },
+                            "LastUpdateDate": {
+                                "type": "string"
+                            },
+                            "OptyId_c": {
+                                "type": "integer"
+                            },
+                            "Type_c": {
+                                "type": "string"
+                            },
+                            "OraZcxOwner_c": {
+                                "type": "integer"
+                            },
+                            "CurcyConvRateType": {
+                                "type": "string"
+                            },
+                            "CreationDate": {
+                                "type": "string"
+                            },
+                            "CreatedBy": {
+                                "type": "string"
+                            },
+                            "SelectedRow": {
+                                "type": "string"
+                            },
+                            "LastUpdateLogin": {
+                                "type": "string"
+                            },
+                            "RecordNumber": {
+                                "type": "integer"
+                            },
+                            "OraZcxOwner_Id_c": {
+                                "type": "integer"
+                            },
+                            "OtherIncomeCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "LoanApplicantIncome_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "AfterTaxAmount_c": {
+                                                    "type": "integer"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "OtherIncomeType_c": {
+                                                    "type": "string"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "GrossAmount_c": {
+                                                    "type": "integer"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "SalaryCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "LoanApplicantIncome_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "AfterTaxSalary_c": {
+                                                    "type": "integer"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "GrossSalary_c": {
+                                                    "type": "integer"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "Applicant_c": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "SalesStageId": {
+                        "type": "integer"
+                    },
+                    "PartyName1": {
+                        "type": "string"
+                    },
+                    "TotalOfEligible_c": {
+                        "type": "string"
+                    },
+                    "MatchingGiftEligible_c": {
+                        "type": "boolean"
+                    },
+                    "OptyCreatedBy": {
+                        "type": "string"
+                    },
+                    "PrimaryOrganizationId": {
+                        "type": "integer"
+                    },
+                    "PercentReferring_c": {
+                        "type": "string"
+                    },
+                    "CreatedBy": {
+                        "type": "string"
+                    },
+                    "BookingDate_c": {
+                        "type": "string"
+                    },
+                    "CreateProject_c": {
+                        "type": "boolean"
+                    },
+                    "PrSrcNumber": {
+                        "type": "string"
+                    },
+                    "DescriptionText": {
+                        "type": "string"
+                    },
+                    "IBAssetId": {
+                        "type": "string"
+                    },
+                    "StrategicLevelCode": {
+                        "type": "string"
+                    },
+                    "LookupCategory": {
+                        "type": "string"
+                    },
+                    "AssetProduct": {
+                        "type": "string"
+                    },
+                    "DateSelected_c": {
+                        "type": "string"
+                    },
+                    "SalesStage": {
+                        "type": "string"
+                    },
+                    "Selected": {
+                        "type": "string"
+                    },
+                    "ParentOpportunity_Id_c": {
+                        "type": "string"
+                    },
+                    "Split_c": {
+                        "type": "string"
+                    },
+                    "ProjectId_c": {
+                        "type": "string"
+                    },
+                    "PriceList_Id_c": {
+                        "type": "integer"
+                    },
+                    "EnrollmentTerm_cMeaning": {
+                        "type": "string"
+                    },
+                    "MaximumDaysInStage": {
+                        "type": "integer"
+                    },
+                    "StrategicImportance_c": {
+                        "type": "string"
+                    },
+                    "ApprovalStatus_cMeaning": {
+                        "type": "string"
+                    },
+                    "ClosePeriod": {
+                        "type": "string"
+                    },
+                    "Revenue_c": {
+                        "type": "string"
+                    },
+                    "ECApprovalStatus_c": {
+                        "type": "string"
+                    },
+                    "BidProcess_c": {
+                        "type": "string"
+                    },
+                    "AwardedToBid_c": {
+                        "type": "string"
+                    },
+                    "ProjectStart_c": {
+                        "type": "string"
+                    },
+                    "CampusRole_cMeaning": {
+                        "type": "string"
+                    },
+                    "OpportunityTypeTest_cMeaning": {
+                        "type": "string"
+                    },
+                    "OptyNumber": {
+                        "type": "integer"
+                    },
+                    "TargetPartyName": {
+                        "type": "string"
+                    },
+                    "ProjectLocation_c": {
+                        "type": "string"
+                    },
+                    "BudgetAvailableDate": {
+                        "type": "string"
+                    },
+                    "OptyLastUpdateDate": {
+                        "type": "string"
+                    },
+                    "DesignationInterest_c": {
+                        "type": "string"
+                    },
+                    "ProjectDescription_c": {
+                        "type": "string"
+                    },
+                    "OptyCreationDate": {
+                        "type": "string"
+                    },
+                    "PrimaryContactPartyNumber": {
+                        "type": "string"
+                    },
+                    "ProjectIntegrationStatus_c": {
+                        "type": "string"
+                    },
+                    "PrimaryCompetitorPartyNumber": {
+                        "type": "string"
+                    },
+                    "UpdateFlag": {
+                        "type": "boolean"
+                    },
+                    "Liabilities": {
+                        "type": "object",
+                        "properties": {
+                            "Id": {
+                                "type": "integer"
+                            },
+                            "ConflictId": {
+                                "type": "integer"
+                            },
+                            "CorpCurrencyCode": {
+                                "type": "string"
+                            },
+                            "RecordName": {
+                                "type": "string"
+                            },
+                            "OtherLoanCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "FinancialInstitutionName_c": {
+                                                    "type": "string"
+                                                },
+                                                "Purpose_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "Borrower_c": {
+                                                    "type": "string"
+                                                },
+                                                "LoanApplicantLiabilities_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "CurrentLimitOrOriginalLoanAmount_c": {
+                                                    "type": "integer"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "AmountOwing_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "LastUpdatedBy": {
+                                "type": "string"
+                            },
+                            "CurrencyCode": {
+                                "type": "string"
+                            },
+                            "UserLastUpdateDate": {
+                                "type": "string"
+                            },
+                            "LastUpdateDate": {
+                                "type": "string"
+                            },
+                            "OptyId_c": {
+                                "type": "integer"
+                            },
+                            "Type_c": {
+                                "type": "string"
+                            },
+                            "OraZcxOwner_c": {
+                                "type": "integer"
+                            },
+                            "CurcyConvRateType": {
+                                "type": "string"
+                            },
+                            "CreationDate": {
+                                "type": "string"
+                            },
+                            "CreditAndStoreCardCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "FinancialInstitutionName_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CardType_c": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "Borrower_c": {
+                                                    "type": "string"
+                                                },
+                                                "CreditLimit_c": {
+                                                    "type": "integer"
+                                                },
+                                                "LoanApplicantLiabilities_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "AmountOwing_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "PersonalLoanCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "FinancialInstitutionName_c": {
+                                                    "type": "string"
+                                                },
+                                                "Purpose_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "Borrower_c": {
+                                                    "type": "string"
+                                                },
+                                                "LoanApplicantLiabilities_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "CurrentLimitOrOriginalLoanAmount_c": {
+                                                    "type": "integer"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "AmountOwing_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "CreatedBy": {
+                                "type": "string"
+                            },
+                            "HomeAndInvestmentPropertyLoaCollection_c": {
+                                "type": "object",
+                                "properties": {
+                                    "Id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Id": {
+                                                    "type": "integer"
+                                                },
+                                                "ConflictId": {
+                                                    "type": "integer"
+                                                },
+                                                "CorpCurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "RecordName": {
+                                                    "type": "string"
+                                                },
+                                                "PropertyType_c": {
+                                                    "type": "string"
+                                                },
+                                                "FinancialInstitutionName_c": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "CurrencyCode": {
+                                                    "type": "string"
+                                                },
+                                                "UserLastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "LastUpdateDate": {
+                                                    "type": "string"
+                                                },
+                                                "CurcyConvRateType": {
+                                                    "type": "string"
+                                                },
+                                                "CreationDate": {
+                                                    "type": "string"
+                                                },
+                                                "Borrower_c": {
+                                                    "type": "string"
+                                                },
+                                                "LoanApplicantLiabilities_Id_c": {
+                                                    "type": "integer"
+                                                },
+                                                "CreatedBy": {
+                                                    "type": "string"
+                                                },
+                                                "OriginalLoanAmount_c": {
+                                                    "type": "integer"
+                                                },
+                                                "LastUpdateLogin": {
+                                                    "type": "string"
+                                                },
+                                                "RecordNumber": {
+                                                    "type": "integer"
+                                                },
+                                                "AmountOwing_c": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "SelectedRow": {
+                                "type": "string"
+                            },
+                            "LastUpdateLogin": {
+                                "type": "string"
+                            },
+                            "RecordNumber": {
+                                "type": "integer"
+                            },
+                            "OraZcxOwner_Id_c": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "Referenceable_c": {
+                        "type": "boolean"
+                    },
+                    "Amount_c": {
+                        "type": "string"
+                    },
+                    "QuotedFlag": {
+                        "type": "string"
+                    },
+                    "Occupation_c": {
+                        "type": "string"
+                    },
+                    "LastUpdateLogin": {
+                        "type": "string"
+                    },
+                    "SubmitForApproval_c": {
+                        "type": "boolean"
+                    },
+                    "PotentialGiftValue_c": {
+                        "type": "string"
+                    },
+                    "PrimaryPartnerId": {
+                        "type": "string"
+                    },
+                    "PartyUniqueName1": {
+                        "type": "string"
+                    },
+                    "PredWinProb": {
+                        "type": "string"
+                    },
+                    "HTMOpportunityType_c": {
+                        "type": "string"
+                    },
+                    "OptyId": {
+                        "type": "integer"
+                    },
+                    "TransactionType_c": {
+                        "type": "string"
+                    },
+                    "PrimaryContactFormattedPhoneNumber": {
+                        "type": "string"
+                    },
+                    "PhaseCd": {
+                        "type": "string"
+                    },
+                    "TransferStudent_c": {
+                        "type": "boolean"
+                    },
+                    "FinancialAidSource_cMeaning": {
+                        "type": "string"
+                    },
+                    "FinancialAidSource_c": {
+                        "type": "string"
+                    },
+                    "BidType_c": {
+                        "type": "string"
+                    },
+                    "ApprovalStatus_c": {
+                        "type": "string"
+                    },
+                    "RecordSet": {
+                        "type": "string"
+                    },
+                    "ExpectAmount": {
+                        "type": "integer"
+                    },
+                    "ExistingAccount_c": {
+                        "type": "boolean"
+                    },
+                    "PriceList_c": {
+                        "type": "string"
+                    },
+                    "ChampionFlag": {
+                        "type": "boolean"
+                    },
+                    "StageStatusCd": {
+                        "type": "string"
+                    },
+                    "NewPhysician_c": {
+                        "type": "boolean"
+                    },
+                    "PartnerSelected_Id_c": {
+                        "type": "string"
+                    },
+                    "BusinessGroup_c": {
+                        "type": "string"
+                    },
+                    "InternationalStudent_c": {
+                        "type": "boolean"
+                    },
+                    "RiskLevelCode": {
+                        "type": "string"
+                    },
+                    "PartnershipType_c": {
+                        "type": "string"
+                    },
+                    "ApplicationStage_cMeaning": {
+                        "type": "string"
+                    },
+                    "ProjectOffice_c": {
+                        "type": "string"
+                    },
+                    "ProjectDurationDays_c": {
+                        "type": "string"
+                    },
+                    "EmailAddress": {
+                        "type": "string"
+                    },
+                    "OptyLastUpdatedBy": {
+                        "type": "string"
+                    },
+                    "ForecastOverrideCode": {
+                        "type": "string"
+                    },
+                    "ProgramInterest_cMeaning": {
+                        "type": "string"
+                    },
+                    "Latitude_c": {
+                        "type": "string"
+                    },
+                    "ECOpportunityType_c": {
+                        "type": "string"
+                    },
+                    "LastGiftDate_c": {
+                        "type": "string"
+                    },
+                    "CampusRole_c": {
+                        "type": "string"
+                    },
+                    "PrimaryContactEmailAddress": {
+                        "type": "string"
+                    },
+                    "StartDate_c": {
+                        "type": "string"
+                    },
+                    "AssetSerialNumber": {
+                        "type": "string"
+                    },
+                    "EstimatedCommission_c": {
+                        "type": "string"
+                    },
+                    "Region_c": {
+                        "type": "string"
+                    },
+                    "UpsideAmount": {
+                        "type": "integer"
+                    },
+                    "AverageDaysAtStage": {
+                        "type": "integer"
+                    },
+                    "GiftType_c": {
+                        "type": "string"
+                    },
+                    "Registered": {
+                        "type": "string"
+                    },
+                    "BidComplexity_c": {
+                        "type": "string"
+                    },
+                    "BdgtAmount": {
+                        "type": "string"
+                    },
+                    "Services_c": {
+                        "type": "string"
+                    },
+                    "ProgramInterest_c": {
+                        "type": "string"
+                    },
+                    "OwnerPartyNumber": {
+                        "type": "integer"
+                    },
+                    "ExpectedStartDate_c": {
+                        "type": "string"
+                    },
+                    "ProjectIdUI_c": {
+                        "type": "string"
+                    },
+                    "KeyContactId": {
+                        "type": "string"
+                    },
+                    "SATScoreText_c": {
+                        "type": "string"
+                    },
+                    "GraduationDate_c": {
+                        "type": "string"
+                    },
+                    "RegistrationType": {
+                        "type": "string"
+                    },
+                    "ReferralPerMonthUnits_c": {
+                        "type": "string"
+                    },
+                    "CalculateEstimatedCommission_c": {
+                        "type": "boolean"
+                    },
+                    "GiftClubMembership_c": {
+                        "type": "string"
+                    },
+                    "OpportunityResource": {
+                        "type": "object",
+                        "properties": {
+                            "OptyResourceId": {
+                                "type": "object",
+                                "properties": {
+                                    "ConflictId": {
+                                        "type": "integer"
+                                    },
+                                    "ResourceId": {
+                                        "type": "integer"
+                                    },
+                                    "DealExpirationDate": {
+                                        "type": "string"
+                                    },
+                                    "PersonLastName": {
+                                        "type": "string"
+                                    },
+                                    "FormattedPhoneNumber": {
+                                        "type": "string"
+                                    },
+                                    "AssignmentType": {
+                                        "type": "string"
+                                    },
+                                    "LastUpdatedBy": {
+                                        "type": "string"
+                                    },
+                                    "LastUpdateDate": {
+                                        "type": "string"
+                                    },
+                                    "OwnerFlag": {
+                                        "type": "boolean"
+                                    },
+                                    "LockAssignmentFlag": {
+                                        "type": "boolean"
+                                    },
+                                    "CreationDate": {
+                                        "type": "string"
+                                    },
+                                    "TerritoryName": {
+                                        "type": "string"
+                                    },
+                                    "PersonFirstName": {
+                                        "type": "string"
+                                    },
+                                    "PartnerPartyName": {
+                                        "type": "string"
+                                    },
+                                    "AccessLevelCode": {
+                                        "type": "integer"
+                                    },
+                                    "DealProtectedDate": {
+                                        "type": "string"
+                                    },
+                                    "DealProtected": {
+                                        "type": "string"
+                                    },
+                                    "CreatedBy": {
+                                        "type": "string"
+                                    },
+                                    "ResourcePartyNumber": {
+                                        "type": "integer"
+                                    },
+                                    "OptyResourceNumber": {
+                                        "type": "integer"
+                                    },
+                                    "OptyNumber": {
+                                        "type": "integer"
+                                    },
+                                    "RoleName": {
+                                        "type": "string"
+                                    },
+                                    "LastUpdateLogin": {
+                                        "type": "string"
+                                    },
+                                    "AsgnTerritoryVersionId": {
+                                        "type": "string"
+                                    },
+                                    "OptyId": {
+                                        "type": "integer"
+                                    },
+                                    "PartyName": {
+                                        "type": "string"
+                                    },
+                                    "EmailAddress": {
+                                        "type": "string"
+                                    },
+                                    "MgrResourceId": {
+                                        "type": "integer"
+                                    },
+                                    "MemberFunctionCode": {
+                                        "type": "string"
+                                    },
+                                    "OptyResourceId": {
+                                        "type": "integer"
+                                    },
+                                    "PartnerOrgId": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "BudgetedFlag": {
+                        "type": "boolean"
+                    },
+                    "LikelihoodToWinBid_Id_c": {
+                        "type": "string"
+                    },
+                    "DeleteFlag": {
+                        "type": "boolean"
+                    },
+                    "OpportunityType_c": {
+                        "type": "string"
+                    },
+                    "ContractGeneratedFlag_c": {
+                        "type": "boolean"
+                    },
+                    "Last_Update_Of_Close_Date_c": {
+                        "type": "string"
+                    },
+                    "CurrentAcademicYear_c": {
+                        "type": "string"
+                    },
+                    "ProjectIntegrationStatusUI_c": {
+                        "type": "string"
+                    },
+                    "Comments": {
+                        "type": "string"
+                    },
+                    "CompanyName_Id_c": {
+                        "type": "string"
+                    },
+                    "ReasonWonLostCode": {
+                        "type": "string"
+                    },
+                    "PrimaryContactPartyName": {
+                        "type": "string"
+                    },
+                    "StatusCode": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

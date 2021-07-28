@@ -1,0 +1,257 @@
+{
+  "pageModelVersion": "2010.0.0",
+  "title": "",
+  "description": "",
+  "variables": {},
+  "metadata": {},
+  "types": {},
+  "chains": {
+    "GetCode": {
+      "description": "",
+      "root": "getVerificationCode",
+      "actions": {
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $chain.results.getVerificationCode.message.summary ]]",
+            "type": "error",
+            "displayMode": "persist"
+          }
+        },
+        "getVerificationCode": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "customer360Fn/getVerify",
+            "uriParams": {
+              "email": "{{ $application.user.email }}",
+              "loanid": "{{ $flow.variables.Verify.appId }}"
+            },
+            "responseType": "flow:getVerify",
+            "responseBodyFormat": "json"
+          },
+          "outcomes": {
+            "failure": "fireNotification1",
+            "success": "assignVariables1"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$flow.variables.Verify": {
+              "source": {
+                "result": "{{ $chain.results.getVerificationCode.body.result }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          }
+        }
+      },
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      }
+    },
+    "GetData": {
+      "description": "",
+      "root": "callGetLoan",
+      "actions": {
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $chain.results.callGetLoan.message.summary ]]",
+            "type": "error",
+            "displayMode": "persist"
+          }
+        },
+        "callGetLoan": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "customer360Fn/getLoan",
+            "responseBodyFormat": "json",
+            "responseType": "flow:getLoan",
+            "uriParams": {
+              "email": "john.dunbar_zbic@oracledemos.com",
+              "loanid": "{{ $flow.variables.Verify.appId }}",
+              "code": "{{ $flow.variables.Verify.code }}"
+            }
+          },
+          "outcomes": {
+            "failure": "fireNotification1",
+            "success": "assignVariables1"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$flow.variables.CustomerData": {
+              "source": "{{ $chain.results.callGetLoan.body }}",
+              "auto": "always",
+              "mapping": {
+                "$target.OpportunityResource.PersonFirstName": {
+                  "source": "$source.OpportunityResource.PersonFirstName",
+                  "reset": "none"
+                },
+                "$target.OpportunityResource.PersonLastName": {
+                  "source": "$source.OpportunityResource.PersonLastName",
+                  "reset": "none"
+                }
+              }
+            }
+          },
+          "outcomes": {
+            "success": "assignADP"
+          }
+        },
+        "navigateToDatapage": {
+          "module": "vb/action/builtin/navigateToPageAction",
+          "parameters": {
+            "page": "main-data"
+          }
+        },
+        "assignADP": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$flow.variables.AccountsADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Assets.AccountCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.CreditAndStoreCardADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Liabilities.CreditAndStoreCardCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.HomeAndInvestmentPropertiesADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Assets.HomeAndInvestmentPropertiesCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.HomeAndInvestmentPropertyLoanADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Liabilities.HomeAndInvestmentPropertyLoaCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.MotorVehiclesADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Assets.MotorVehiclesCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.OtherIncomeADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Income.OtherIncomeCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.OtherLoanADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Liabilities.OtherLoanCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.PersonalLoanADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Liabilities.PersonalLoanCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            },
+            "$flow.variables.SalaryADP": {
+              "source": {
+                "data": "{{ $chain.results.callGetLoan.body.Income.SalaryCollection_c.Id }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "navigateToDatapage"
+          }
+        }
+      },
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      }
+    }
+  },
+  "eventListeners": {
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "GetCode",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    },
+    "ojButtonOjAction2": {
+      "chains": [
+        {
+          "chainId": "GetData",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-sample-flip-card": {
+        "path": "oj-sample/flip-card/loader"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-checkboxset": {
+        "path": "ojs/ojcheckboxset"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+    }
+  }
+}

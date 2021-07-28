@@ -1,0 +1,773 @@
+{
+  "flowModelVersion": "2010.0.0",
+  "id": "main",
+  "description": "Flow main",
+  "defaultPage": "main-start",
+  "chains": {},
+  "services": {},
+  "types": {
+    "@decorators.AccountCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Assets-_-AccountCollection_c-_-Id[0]"
+    },
+    "@decorators.CreditAndStoreCardCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Liabilities-_-CreditAndStoreCardCollection_c-_-Id[0]"
+    },
+    "@decorators.getLoan": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response"
+    },
+    "@decorators.getVerify": {
+      "endpoint": "getVerify",
+      "service": "customer360Fn",
+      "path": "response"
+    },
+    "@decorators.HomeAndInvestmentPropertiesCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Assets-_-HomeAndInvestmentPropertiesCollection_c-_-Id[0]"
+    },
+    "@decorators.HomeAndInvestmentPropertyLoaCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Liabilities-_-HomeAndInvestmentPropertyLoaCollection_c-_-Id[0]"
+    },
+    "@decorators.MotorVehiclesCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Assets-_-MotorVehiclesCollection_c-_-Id[0]"
+    },
+    "@decorators.OtherIncomeCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Income-_-OtherIncomeCollection_c-_-Id[0]"
+    },
+    "@decorators.OtherLoanCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Liabilities-_-OtherLoanCollection_c-_-Id[0]"
+    },
+    "@decorators.PersonalLoanCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Liabilities-_-PersonalLoanCollection_c-_-Id[0]"
+    },
+    "@decorators.SalaryCollectionType": {
+      "endpoint": "getLoan",
+      "service": "customer360Fn",
+      "path": "response-_-Income-_-SalaryCollection_c-_-Id[0]"
+    },
+    "AccountCollectionType": {
+      "Balance_c": "number",
+      "FinancialInstitutionName_c": "string",
+      "Id": "number"
+    },
+    "CreditAndStoreCardCollectionType": {
+      "AmountOwing_c": "number",
+      "Borrower_c": "string",
+      "CardType_c": "string",
+      "CreditLimit_c": "number",
+      "FinancialInstitutionName_c": "string",
+      "Id": "number"
+    },
+    "getLoan": {
+      "AcademicDistinctions_c": "string",
+      "AccountPartyNumber": "number",
+      "ACTScore_c": "string",
+      "Alumnus_c": "boolean",
+      "Amount_c": "string",
+      "ApplicationStage_c": "string",
+      "ApplicationStage_cMeaning": "string",
+      "ApplicationType_c": "string",
+      "ApplicationType_cMeaning": "string",
+      "ApprovalStatus_c": "string",
+      "ApprovalStatus_cMeaning": "string",
+      "AssetId": "string",
+      "AssetNumber": "string",
+      "AssetProduct": "string",
+      "Assets": {
+        "AccountCollection_c": {
+            "Id": [
+              {
+                "Assets_Id_c": "number",
+                "Balance_c": "number",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "FinancialInstitutionName_c": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "AssetType_c": "string",
+        "ConflictId": "number",
+        "CorpCurrencyCode": "string",
+        "CreatedBy": "string",
+        "CreationDate": "string",
+        "CurcyConvRateType": "string",
+        "CurrencyCode": "string",
+        "HomeAndInvestmentPropertiesCollection_c": {
+            "Id": [
+              {
+                "Address_c": "string",
+                "Assets_Id_c": "number",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "PresentValue_c": "number",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "Id": "number",
+        "LastUpdateDate": "string",
+        "LastUpdatedBy": "string",
+        "LastUpdateLogin": "string",
+        "MotorVehiclesCollection_c": {
+            "Id": [
+              {
+                "Assets_Id_c": "number",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "Make_c": "string",
+                "Model_c": "string",
+                "PresentValue_c": "number",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string",
+                "YearOfManufacture_c": "number"
+              }
+            ]
+          },
+        "OptyId_c": "number",
+        "OraZcxOwner_c": "number",
+        "OraZcxOwner_Id_c": "number",
+        "RecordName": "string",
+        "RecordNumber": "number",
+        "SelectedRow": "string",
+        "SundryCollection_c": "string",
+        "Type_c": "string",
+        "UserLastUpdateDate": "string"
+      },
+      "AssetSerialNumber": "string",
+      "AssociationFromSubTab_c": "boolean",
+      "AverageDaysAtStage": "number",
+      "AwardDate_c": "string",
+      "AwardedToBid_c": "string",
+      "AwardedToBid_Id_c": "string",
+      "BatchTag": "string",
+      "BdgtAmount": "string",
+      "BdgtAmtCurcyCd": "string",
+      "BidComplexity_c": "string",
+      "BidProcess_c": "string",
+      "BidType_c": "string",
+      "BookableIncome_c": "string",
+      "BookableRevenue_c": "string",
+      "BookingDate_c": "string",
+      "BudgetAvailableDate": "string",
+      "BudgetedFlag": "boolean",
+      "BusinessGroup_c": "string",
+      "CalculateEstimatedCommission_c": "boolean",
+      "Campus_c": "string",
+      "Campus_cMeaning": "string",
+      "CampusRole_c": "string",
+      "CampusRole_cMeaning": "string",
+      "ChampionFlag": "boolean",
+      "ClosePeriod": "string",
+      "Comments": "string",
+      "CompanyName_c": "string",
+      "CompanyName_Id_c": "string",
+      "ConflictId": "number",
+      "ContractGeneratedFlag_c": "boolean",
+      "ContractId_c": "string",
+      "ContractVersion_c": "string",
+      "Country_c": "string",
+      "CreatedBy": "string",
+      "CreateProject_c": "boolean",
+      "CreationDate": "string",
+      "CrmConversionRate": "number",
+      "CrmCurrencyCode": "string",
+      "CurrencyCode": "string",
+      "CurrentAcademicYear_c": "string",
+      "CurrentAcademicYear_cMeaning": "string",
+      "CurrentGPA_c": "string",
+      "CustomerAccountId": "string",
+      "DateSelected_c": "string",
+      "DealHorizonCode": "string",
+      "DecisionLevelCode": "string",
+      "DeleteFlag": "boolean",
+      "Description": "string",
+      "DescriptionText": "string",
+      "DesignationInterest_c": "string",
+      "DesignationInterest_cMeaning": "string",
+      "DownsideAmount": "number",
+      "EarlyAdmissions_c": "boolean",
+      "ECApprovalStatus_c": "string",
+      "ECOpportunityType_c": "string",
+      "EffectiveDate": "string",
+      "EmailAddress": "string",
+      "EnrollmentTerm_c": "string",
+      "EnrollmentTerm_cMeaning": "string",
+      "EstCompletionDate_c": "string",
+      "EstimateCommission_c": "boolean",
+      "EstimatedCommission_c": "string",
+      "EstimatedTotalBooking_c": "string",
+      "EstStartDate_c": "string",
+      "ExistingAccount_c": "boolean",
+      "ExpectAmount": "number",
+      "ExpectedStartDate_c": "string",
+      "FinancialAidSource_c": "string",
+      "FinancialAidSource_cMeaning": "string",
+      "ForecastOverrideCode": "string",
+      "Fourth_Last_Update_Of_Close_Da_c": "string",
+      "FullContractIncome_c": "string",
+      "FullContractRevenue_c": "string",
+      "GiftClubMembership_c": "string",
+      "GiftClubMembership_cMeaning": "string",
+      "GiftType_c": "string",
+      "GiftType_cMeaning": "string",
+      "GraduationDate_c": "string",
+      "GSECode_c": "number",
+      "HighSchoolName_c": "string",
+      "HighSchoolType_c": "string",
+      "HighSchoolType_cMeaning": "string",
+      "HintCode": "string",
+      "HTMOpportunityType_c": "string",
+      "IBAssetId": "string",
+      "IBAssetNumber": "string",
+      "IBAssetSerialNumber": "string",
+      "Income": {
+        "ConflictId": "number",
+        "CorpCurrencyCode": "string",
+        "CreatedBy": "string",
+        "CreationDate": "string",
+        "CurcyConvRateType": "string",
+        "CurrencyCode": "string",
+        "Id": "number",
+        "LastUpdateDate": "string",
+        "LastUpdatedBy": "string",
+        "LastUpdateLogin": "string",
+        "OptyId_c": "number",
+        "OraZcxOwner_c": "number",
+        "OraZcxOwner_Id_c": "number",
+        "OtherIncomeCollection_c": {
+            "Id": [
+              {
+                "AfterTaxAmount_c": "number",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "GrossAmount_c": "number",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantIncome_Id_c": "number",
+                "OtherIncomeType_c": "string",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "RecordName": "string",
+        "RecordNumber": "number",
+        "SalaryCollection_c": {
+            "Id": [
+              {
+                "AfterTaxSalary_c": "number",
+                "Applicant_c": "string",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "GrossSalary_c": "number",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantIncome_Id_c": "number",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "SelectedRow": "string",
+        "Type_c": "string",
+        "UserLastUpdateDate": "string"
+      },
+      "InternationalStudent_c": "boolean",
+      "KeyContactId": "string",
+      "Last_Update_Of_Close_Date_c": "string",
+      "LastGiftDate_c": "string",
+      "LastUpdateDate": "string",
+      "LastUpdatedBy": "string",
+      "LastUpdateLogin": "string",
+      "Latitude_c": "string",
+      "Liabilities": {
+        "ConflictId": "number",
+        "CorpCurrencyCode": "string",
+        "CreatedBy": "string",
+        "CreationDate": "string",
+        "CreditAndStoreCardCollection_c": {
+            "Id": [
+              {
+                "AmountOwing_c": "number",
+                "Borrower_c": "string",
+                "CardType_c": "string",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CreditLimit_c": "number",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "FinancialInstitutionName_c": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantLiabilities_Id_c": "number",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "CurcyConvRateType": "string",
+        "CurrencyCode": "string",
+        "HomeAndInvestmentPropertyLoaCollection_c": {
+            "Id": [
+              {
+                "AmountOwing_c": "number",
+                "Borrower_c": "string",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "FinancialInstitutionName_c": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantLiabilities_Id_c": "number",
+                "OriginalLoanAmount_c": "number",
+                "PropertyType_c": "string",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "Id": "number",
+        "LastUpdateDate": "string",
+        "LastUpdatedBy": "string",
+        "LastUpdateLogin": "string",
+        "OptyId_c": "number",
+        "OraZcxOwner_c": "number",
+        "OraZcxOwner_Id_c": "number",
+        "OtherLoanCollection_c": {
+            "Id": [
+              {
+                "AmountOwing_c": "number",
+                "Borrower_c": "string",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "CurrentLimitOrOriginalLoanAmount_c": "number",
+                "FinancialInstitutionName_c": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantLiabilities_Id_c": "number",
+                "Purpose_c": "string",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "PersonalLoanCollection_c": {
+            "Id": [
+              {
+                "AmountOwing_c": "number",
+                "Borrower_c": "string",
+                "ConflictId": "number",
+                "CorpCurrencyCode": "string",
+                "CreatedBy": "string",
+                "CreationDate": "string",
+                "CurcyConvRateType": "string",
+                "CurrencyCode": "string",
+                "CurrentLimitOrOriginalLoanAmount_c": "number",
+                "FinancialInstitutionName_c": "string",
+                "Id": "number",
+                "LastUpdateDate": "string",
+                "LastUpdatedBy": "string",
+                "LastUpdateLogin": "string",
+                "LoanApplicantLiabilities_Id_c": "number",
+                "Purpose_c": "string",
+                "RecordName": "string",
+                "RecordNumber": "number",
+                "UserLastUpdateDate": "string"
+              }
+            ]
+          },
+        "RecordName": "string",
+        "RecordNumber": "number",
+        "SelectedRow": "string",
+        "Type_c": "string",
+        "UserLastUpdateDate": "string"
+      },
+      "LikelihoodToWinBid_c": "string",
+      "LikelihoodToWinBid_Id_c": "string",
+      "LineOfBusinessCode": "string",
+      "Longitude_c": "string",
+      "LookupCategory": "string",
+      "Margin_c": "string",
+      "MatchingGiftEligible_c": "boolean",
+      "MaximumDaysInStage": "number",
+      "Name": "string",
+      "NewAccount_c": "boolean",
+      "NewPhysician_c": "boolean",
+      "Occupation_c": "string",
+      "Opportunity_Id_ProjectToBid": "string",
+      "OpportunityContact": "string",
+      "OpportunityResource": {
+        "OptyResourceId": {
+            "AccessLevelCode": "number",
+            "AsgnTerritoryVersionId": "string",
+            "AssignmentType": "string",
+            "ConflictId": "number",
+            "CreatedBy": "string",
+            "CreationDate": "string",
+            "DealExpirationDate": "string",
+            "DealProtected": "string",
+            "DealProtectedDate": "string",
+            "EmailAddress": "string",
+            "FormattedPhoneNumber": "string",
+            "LastUpdateDate": "string",
+            "LastUpdatedBy": "string",
+            "LastUpdateLogin": "string",
+            "LockAssignmentFlag": "boolean",
+            "MemberFunctionCode": "string",
+            "MgrResourceId": "number",
+            "OptyId": "number",
+            "OptyNumber": "number",
+            "OptyResourceId": "number",
+            "OptyResourceNumber": "number",
+            "OwnerFlag": "boolean",
+            "PartnerOrgId": "string",
+            "PartnerPartyName": "string",
+            "PartyName": "string",
+            "PersonFirstName": "string",
+            "PersonLastName": "string",
+            "ResourceId": "number",
+            "ResourcePartyNumber": "number",
+            "RoleName": "string",
+            "TerritoryName": "string"
+          }
+      },
+      "OpportunityType_c": "string",
+      "OpportunityType_cMeaning": "string",
+      "OpportunityType1_c": "string",
+      "OpportunityType1_cMeaning": "string",
+      "OpportunityTypeSW_c": "string",
+      "OpportunityTypeSW_cMeaning": "string",
+      "OpportunityTypeTest_c": "string",
+      "OpportunityTypeTest_cMeaning": "string",
+      "OptyCreatedBy": "string",
+      "OptyCreationDate": "string",
+      "OptyId": "number",
+      "OptyLastUpdateDate": "string",
+      "OptyLastUpdatedBy": "string",
+      "OptyNumber": "number",
+      "OwnerPartyNumber": "number",
+      "OwnerResourcePartyId": "number",
+      "ParentOpportunity_c": "string",
+      "ParentOpportunity_Id_c": "string",
+      "ParentProject_c": "string",
+      "ParentProject_Id_c": "string",
+      "PartnerSelected_c": "string",
+      "PartnerSelected_Id_c": "string",
+      "PartnershipType_c": "string",
+      "PartyName1": "string",
+      "PartyUniqueName1": "string",
+      "PercentReferring_c": "string",
+      "PhaseCd": "string",
+      "PotentialGiftValue_c": "string",
+      "PotentialGiftValue_cCurcyConvRate": "number",
+      "PotentialGiftValue_cCurrencyCode": "string",
+      "PPMProjectId_c": "string",
+      "Practice_c": "string",
+      "PredWinProb": "string",
+      "PreQualDueDate_c": "string",
+      "PriceList_c": "string",
+      "PriceList_Id_c": "number",
+      "PrimaryCompetitorId": "string",
+      "PrimaryCompetitorPartyNumber": "string",
+      "PrimaryContactEmailAddress": "string",
+      "PrimaryContactFormattedPhoneNumber": "string",
+      "PrimaryContactPartyName": "string",
+      "PrimaryContactPartyNumber": "string",
+      "PrimaryOrganizationId": "number",
+      "PrimaryPartnerCompanyNumber": "string",
+      "PrimaryPartnerId": "string",
+      "PrimaryPartnerOrgPartyName": "string",
+      "PrimaryRevenueId": "number",
+      "ProgramInterest_c": "string",
+      "ProgramInterest_cMeaning": "string",
+      "ProjectDescription_c": "string",
+      "ProjectDurationDays_c": "string",
+      "ProjectId_c": "string",
+      "ProjectIdUI_c": "string",
+      "ProjectIntegrationStatus_c": "string",
+      "ProjectIntegrationStatusUI_c": "string",
+      "ProjectLocation_c": "string",
+      "ProjectManagerEmail_c": "string",
+      "ProjectName_c": "string",
+      "ProjectOffice_c": "string",
+      "ProjectStart_c": "string",
+      "ProjectWorkPlan_c": "string",
+      "ProposalDueDate_c": "string",
+      "PrSrcNumber": "string",
+      "QuotaFactor": "number",
+      "QuotedFlag": "string",
+      "RcmndWinProb": "number",
+      "ReasonForNoBid_c": "string",
+      "ReasonWonLostCode": "string",
+      "RecommendedAction": "string",
+      "RecordSet": "string",
+      "Referenceable_c": "boolean",
+      "ReferralPerMonthUnits_c": "string",
+      "Region_c": "string",
+      "Registered": "string",
+      "RegistrationStatus": "string",
+      "RegistrationType": "string",
+      "RequestClosure_c": "boolean",
+      "RequestedDueDate_c": "string",
+      "Revenue": "number",
+      "Revenue_c": "string",
+      "RFPReleaseDate_c": "string",
+      "RiskLevelCode": "string",
+      "SalesAccountUniqueName": "string",
+      "SalesChannelCd": "string",
+      "SalesMethod": "string",
+      "SalesMethodId": "number",
+      "SalesStage": "string",
+      "SalesStageId": "number",
+      "SATScore_c": "string",
+      "SATScoreText_c": "string",
+      "Second_Last_Update_Of_Close_Da_c": "string",
+      "Selected": "string",
+      "Services_c": "string",
+      "SourceCampaign_c": "string",
+      "SourceType": "string",
+      "Split_c": "string",
+      "StageStatusCd": "string",
+      "StartDate_c": "string",
+      "StatusCode": "string",
+      "StgOrder": "number",
+      "StrategicImportance_c": "string",
+      "StrategicLevelCode": "string",
+      "SubmitForApproval_c": "boolean",
+      "TargetPartyId": "number",
+      "TargetPartyName": "string",
+      "Third_Last_Update_Of_Close_Dat_c": "string",
+      "TotalOfEligible_c": "string",
+      "TransactionType_c": "string",
+      "TransferStudent_c": "boolean",
+      "TypesOfReferal_c": "string",
+      "UpdateFlag": "boolean",
+      "UpsideAmount": "number",
+      "uuid": "string",
+      "WinProb": "number",
+      "XSD_c": "string"
+    },
+    "getVerify": {
+      "code": "string",
+      "email": "string",
+      "result": "string"
+    },
+    "HomeAndInvestmentPropertiesCollectionType": {
+      "Address_c": "string",
+      "Id": "number",
+      "PresentValue_c": "number"
+    },
+    "HomeAndInvestmentPropertyLoaCollectionType": {
+      "AmountOwing_c": "number",
+      "Borrower_c": "string",
+      "FinancialInstitutionName_c": "string",
+      "Id": "number",
+      "OriginalLoanAmount_c": "number",
+      "PropertyType_c": "string"
+    },
+    "MotorVehiclesCollectionType": {
+      "Id": "number",
+      "Make_c": "string",
+      "Model_c": "string",
+      "PresentValue_c": "number",
+      "YearOfManufacture_c": "number"
+    },
+    "OtherIncomeCollectionType": {
+      "AfterTaxAmount_c": "number",
+      "GrossAmount_c": "number",
+      "Id": "number",
+      "OtherIncomeType_c": "string"
+    },
+    "OtherLoanCollectionType": {
+      "AmountOwing_c": "number",
+      "Borrower_c": "string",
+      "CurrentLimitOrOriginalLoanAmount_c": "number",
+      "FinancialInstitutionName_c": "string",
+      "Id": "number",
+      "Purpose_c": "string"
+    },
+    "PersonalLoanCollectionType": {
+      "AmountOwing_c": "number",
+      "Borrower_c": "string",
+      "CurrentLimitOrOriginalLoanAmount_c": "number",
+      "FinancialInstitutionName_c": "string",
+      "Id": "number",
+      "LoanApplicantLiabilities_Id_c": "number",
+      "Purpose_c": "string"
+    },
+    "SalaryCollectionType": {
+      "AfterTaxSalary_c": "number",
+      "Applicant_c": "string",
+      "GrossSalary_c": "number",
+      "Id": "number",
+      "LoanApplicantIncome_Id_c": "number"
+    }
+  },
+  "variables": {
+    "AccountsADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "AccountCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "CreditAndStoreCardADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "CreditAndStoreCardCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "CustomerData": {
+      "type": "getLoan"
+    },
+    "HomeAndInvestmentPropertiesADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "HomeAndInvestmentPropertiesCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "HomeAndInvestmentPropertyLoanADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "HomeAndInvestmentPropertyLoaCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "MotorVehiclesADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "MotorVehiclesCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "OtherIncomeADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "OtherIncomeCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "OtherLoanADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "OtherLoanCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "PersonalLoanADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "PersonalLoanCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "SalaryADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "SalaryCollectionType",
+        "keyAttributes": [
+          "Id"
+        ]
+      }
+    },
+    "Verify": {
+      "type": "getVerify"
+    }
+  }
+}

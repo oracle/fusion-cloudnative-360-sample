@@ -1,0 +1,13 @@
+{
+    "vbcs.dt.version": "20201202-21.04.0",
+    "dependencies": {
+        "upgrade": "micro",
+        "paths": {
+            "jet": "https://static.oracle.com/cdn/jet/9.1.1",
+            "visualRuntime": "https://static.oracle.com/cdn/vb/2010.1.0"
+        }
+    },
+    "source.version": "2101",
+    "rootURL": "Customer360",
+    "version": "0.1"
+}

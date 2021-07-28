@@ -1,0 +1,226 @@
+{
+  "pageModelVersion": "2010.0.0",
+  "title": "",
+  "description": "",
+  "variables": {
+    "HideShowAboutYou": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "HideShowAssets": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "HideShowIncome": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "HideShowLiabilities": {
+      "type": "boolean",
+      "defaultValue": false
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "chains": {
+    "FlipAboutYouCardClickChain": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $page.variables.HideShowAboutYou == false ]]"
+          },
+          "outcomes": {
+            "true": "assignVariables1",
+            "false": "assignVariables2"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowAboutYou": {
+              "source": true
+            }
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowAboutYou": {
+              "source": false
+            }
+          }
+        }
+      }
+    },
+    "FlipAssetsCardClickChain": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $page.variables.HideShowAssets == false]]"
+          },
+          "outcomes": {
+            "true": "assignVariables1",
+            "false": "assignVariables2"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowAssets": {
+              "source": true
+            }
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowAssets": {
+              "source": false
+            }
+          }
+        }
+      }
+    },
+    "FlipIncomeCardClickChain": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $page.variables.HideShowIncome == false ]]"
+          },
+          "outcomes": {
+            "true": "assignVariables1",
+            "false": "assignVariables2"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowIncome": {
+              "source": true
+            }
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowIncome": {
+              "source": false
+            }
+          }
+        }
+      }
+    },
+    "FlipLiabilitiesCardClickChain": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $page.variables.HideShowLiabilities == false ]]"
+          },
+          "outcomes": {
+            "true": "assignVariables1",
+            "false": "assignVariables2"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowLiabilities": {
+              "source": true
+            }
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.HideShowLiabilities": {
+              "source": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "eventListeners": {
+    "AboutYouFlipCardClick": {
+      "chains": [
+        {
+          "chainId": "FlipAboutYouCardClickChain",
+          "parameters": {}
+        }
+      ]
+    },
+    "AssetsFlipCardClick": {
+      "chains": [
+        {
+          "chainId": "FlipAssetsCardClickChain"
+        }
+      ]
+    },
+    "IncomeFlipCardClick": {
+      "chains": [
+        {
+          "chainId": "FlipIncomeCardClickChain"
+        }
+      ]
+    },
+    "LiabilitiesFlipCardClick": {
+      "chains": [
+        {
+          "chainId": "FlipLiabilitiesCardClickChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-sample-flip-card": {
+        "path": "oj-sample/flip-card/loader"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-checkboxset": {
+        "path": "ojs/ojcheckboxset"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      }
+    }
+  }
+}

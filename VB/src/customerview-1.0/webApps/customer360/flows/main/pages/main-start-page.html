@@ -1,0 +1,29 @@
+<!--
+ Copyright (c) 2021, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+  <oj-label for="AppNo" class="oj-flex-item oj-sm-12 oj-md-2">Application No.</oj-label>
+  <oj-input-text id="AppNo" required="true" clear-icon="always" class="oj-flex-item oj-sm-12 oj-md-7" value="{{ $flow.variables.Verify.appId }}"></oj-input-text>
+  <div class="oj-flex-item oj-sm-12 oj-md-1">
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction]]">Get Code</oj-button>
+  </div>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-3"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-7">
+    <oj-bind-text value="[[ $flow.variables.Verify.result ]]"></oj-bind-text>
+  </div>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+  <oj-label class="oj-flex-item oj-sm-12 oj-md-2" for="AppCode">Code</oj-label>
+  <oj-input-text class="oj-flex-item oj-sm-12 oj-md-7" id="AppCode" required="true" clear-icon="always" value="{{ $flow.variables.Verify.code }}"></oj-input-text>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-3"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-2">
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction2]]">Submit</oj-button>
+  </div>
+</div>

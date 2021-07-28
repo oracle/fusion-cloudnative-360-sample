@@ -1,0 +1,10 @@
+{
+    "component-dependencies": {
+        "oj-sample": {
+            "version": "3.2.4",
+            "components": {
+                "flip-card": "2.2.2"
+            }
+        }
+    }
+}

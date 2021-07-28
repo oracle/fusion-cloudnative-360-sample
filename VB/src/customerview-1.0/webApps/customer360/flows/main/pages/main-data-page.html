@@ -1,0 +1,222 @@
+<!--
+ Copyright (c) 2021, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+ <div class="oj-flex">
+  <div class="oj-flex oj-flex-item oj-sm-3" data-vb-layout-type="grid">
+    <div class="oj-flex oj-sm-flex-direction-column">
+      <oj-sample-flip-card class="oj-flex-item oj-sm-flex-initial"
+        on-click="[[$listeners.AboutYouFlipCardClick]]">
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial"
+          slot="front">
+          <h3 class="oj-flex-item">About You</h3>
+        </div>
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial"
+          slot="back">
+          <oj-bind-text
+            value="[[ $flow.variables.CustomerData.OpportunityResource.OptyResourceId.PersonFirstName ]]">
+          </oj-bind-text>
+          <oj-bind-text
+            value=" [[ $flow.variables.CustomerData.OpportunityResource.OptyResourceId.PersonLastName ]]">
+          </oj-bind-text>
+        </div>
+
+      </oj-sample-flip-card>
+      <oj-sample-flip-card class="oj-flex-item oj-sm-flex-initial"
+        on-click="[[$listeners.AssetsFlipCardClick]]">
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial oj-flex-items-pad"
+          slot="front">
+          <h3 class="oj-flex-item oj-sm-flex-initial">Assets</h3>
+        </div>
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial oj-sm-align-items-center oj-sm-flex-direction-column"
+          slot="back">
+          <oj-label class="oj-flex-item oj-sm-flex-initial">Your Assets
+          </oj-label>
+        </div>
+      </oj-sample-flip-card>
+      <oj-sample-flip-card class="oj-flex-item oj-sm-flex-initial"
+        on-click="[[$listeners.IncomeFlipCardClick]]">
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial oj-flex-items-pad"
+          slot="front">
+          <h3 class="oj-flex-item oj-sm-flex-initial">Income</h3>
+        </div>
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial oj-flex-items-pad oj-sm-align-items-center oj-sm-flex-direction-column"
+          slot="back">
+          <oj-label class="oj-flex-item oj-sm-flex-initial">Your Income
+          </oj-label>
+        </div>
+      </oj-sample-flip-card>
+      <oj-sample-flip-card class="oj-flex-item oj-sm-flex-initial"
+        on-click="[[$listeners.LiabilitiesFlipCardClick]]">
+        <div class="oj-flex oj-sm-justify-content-center" slot="front">
+          <h3 class="oj-flex-item oj-sm-flex-initial">Liabilities</h3>
+        </div>
+        <div
+          class="oj-flex oj-sm-justify-content-center oj-sm-flex-items-initial oj-flex-items-pad oj-sm-align-items-center oj-sm-flex-direction-column"
+          slot="back">
+          <oj-label
+            class="oj-flex-item oj-sm-flex-initial oj-sm-align-self-center">
+            Your Liabilities</oj-label>
+        </div>
+      </oj-sample-flip-card>
+    </div>
+  </div>
+  <div class="oj-flex-item oj-sm-9 oj-flex">
+    <div>
+      <oj-bind-if test="[[ $variables.HideShowAboutYou ]]">
+        <oj-form-layout max-columns="2" label-edge="start" id="AboutYouForm">
+          <oj-input-text id="firstName"
+            value="{{ $flow.variables.CustomerData.OpportunityResource.OptyResourceId.PersonFirstName }}"
+            label-hint="First Name" class="oj-form-control-width-md">
+          </oj-input-text>
+          <oj-input-text id="lastName"
+            value="{{ $flow.variables.CustomerData.OpportunityResource.OptyResourceId.PersonLastName }}"
+            label-hint="Last Name" class="oj-form-control-width-md">
+          </oj-input-text>
+          <oj-input-text id="companyName"
+            value="{{ $flow.variables.CustomerData.CompanyName_c }}"
+            label-hint="Company Name" class="oj-form-control-width-md">
+          </oj-input-text>
+          <oj-input-text id="position"
+            value="{{ $flow.variables.CustomerData.OpportunityResource.RoleName }}"
+            label-hint="Position" class="oj-form-control-width-md">
+          </oj-input-text>
+          <oj-input-text id="email" virtual-keyboard="email"
+            validators='[{"type":"regexp", "options":{"pattern":"([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})", "hint":"Enter an email address.", "messageDetail": "Value must be of the form xxx@xxx.xx"}}]'
+            label-hint="Email"
+            value="{{ $flow.variables.CustomerData.EmailAddress }}"
+            class="oj-form-control-width-md"></oj-input-text>
+          <oj-text-area id="street"
+            value="{{ $flow.variables.CustomerData.FormattedAddress }}" rows="2"
+            label-hint="Street" class="oj-form-control-width-md"></oj-text-area>
+          <oj-input-date id="dob" label-hint="Date of Birth"
+            class="oj-form-control-width-md">
+          </oj-input-date>
+          <oj-input-text id="state"
+            value="{{ $flow.variables.CustomerData.State }}" label-hint="State"
+            class="oj-form-control-width-md"></oj-input-text>
+          <oj-input-text id="city"
+            value="{{ $flow.variables.CustomerData.City }}" label-hint="City"
+            class="oj-form-control-width-md"></oj-input-text>
+          <oj-input-text id="zipcode"
+            value="{{ $flow.variables.CustomerData.PostalCode }}"
+            label-hint="Zip/Post Code" class="oj-form-control-width-md">
+          </oj-input-text>
+          <oj-input-text id="country"
+            value="{{ $flow.variables.CustomerData.Country_c }}"
+            label-hint="Country" class="oj-form-control-width-md">
+          </oj-input-text>
+        </oj-form-layout>
+      </oj-bind-if>
+    </div>
+    <div>
+      <oj-bind-if test="[[ $variables.HideShowAssets ]]">
+        <h5>Assets</h5>
+        <h6>Home and Investment Properties</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-list-view
+            data="[[ $flow.variables.HomeAndInvestmentPropertiesADP ]]">
+            <template slot="itemTemplate">
+              <oj-vb-list-item display-options.drill="[['off']]">
+                <!-- Remove span with class for icon and replace with img to directly use an image -->
+                <span role="img" slot="image"
+                  :class="[[ $current.data.icon ]]"></span>
+                <!--img src="[[ $current.data.image ]]" slot="image" width="32" height="32"/-->
+                <div slot="title1">
+                  <oj-bind-text value="Address"></oj-bind-text>
+                </div>
+                <div slot="title2">
+                  <oj-bind-text value="Present Value"></oj-bind-text>
+                </div>
+                <div slot="value1">
+                  <oj-bind-text value="[[ $current.data.Address_c ]]">
+                  </oj-bind-text>
+                </div>
+                <div slot="value2">
+                  <oj-bind-text value="[[ $current.data.PresentValue_c ]]">
+                  </oj-bind-text>
+                </div>
+              </oj-vb-list-item>
+            </template>
+          </oj-list-view>
+        </div>
+        <h5>Other Assets</h5>
+        <h6>Accounts</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.AccountsADP ]]"
+            columns='[{"headerText":"Financial Institution","field":"FinancialInstitutionName_c","resizable":"enabled","id":"FinancialInstitutionName"},{"headerText":"Balance","field":"Balance_c","id":"Balance"}]'
+            id="AccountsTable"></oj-table>
+        </div>
+        <h6>Motor Vehicles</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.MotorVehiclesADP ]]"
+            columns='[{"headerText":"Make","field":"Make_c"},{"headerText":"Model","field":"Model_c"},{"headerText":"Year Of Manufacture","field":"YearOfManufacture_c"},{"headerText":"Present Value","field":"PresentValue_c"}]'
+            id="MotoVehicleTable"></oj-table>
+        </div>
+      </oj-bind-if>
+    </div>
+
+    <div>
+      <oj-bind-if test="[[ $variables.HideShowIncome ]]">
+        <h5>Income</h5>
+        <h6>Salary</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.SalaryADP ]]" id="SalaryTable"
+            columns='[{"headerText":"Applicant","field":"Applicant_c"},{"headerText":"Gross Salary","field":"GrossSalary_c"},{"headerText":"After Tax Salary","field":"AfterTaxSalary_c"}]'>
+          </oj-table>
+        </div>
+        <h6>Other Income</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.OtherIncomeADP ]]" id="OtherIncomeTable"
+            columns='[{"headerText":"Other Income Type","field":"OtherIncomeType_c"},{"headerText":"Gross Amount","field":"GrossAmount_c"},{"headerText":"After Tax Amount","field":"AfterTaxAmount_c"}]'>
+          </oj-table>
+        </div>
+      </oj-bind-if>
+    </div>
+    <div>
+      <oj-bind-if test="[[ $variables.HideShowLiabilities ]]">
+        <h5>Liabilities</h5>
+        <h6>Credit And Store Card</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.CreditAndStoreCardADP ]]"
+            id="CreditAndStoreCardTable"
+            columns='[{"headerText":"Borrower","field":"Borrower_c"},{"headerText":"Card Type","field":"CardType_c"},{"headerText":"Credit Limit","field":"CreditLimit_c"},{"headerText":"Amount Owing","field":"AmountOwing_c"},{"headerText":"Financial Institution","field":"FinancialInstitutionName_c"}]'>
+          </oj-table>
+        </div>
+        <h6>Personal Loan</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.PersonalLoanADP ]]" id="PersonalLoanTable"
+            columns='[{"headerText":"Borrower","field":"Borrower_c"},{"headerText":"Current Limit Or Original Loan Amount","field":"CurrentLimitOrOriginalLoanAmount_c"},{"headerText":"Amount Owing","field":"AmountOwing_c"},{"headerText":"Purpose","field":"Purpose_c"},{"headerText":"Financial Institution","field":"FinancialInstitutionName_c"}]'>
+          </oj-table>
+        </div>
+        <h6>Home And Investment Property Loan</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.HomeAndInvestmentPropertyLoanADP ]]"
+            id="HomeAndInvestmentPropertyLoanTable"
+            columns='[  {    "headerText": "Borrower",    "field": "Borrower_c"  },  {    "headerText": "Property Type",    "field": "PropertyType_c"  },  {    "headerText": "Amount Owing",    "field": "AmountOwing_c"  },  {    "headerText": "Original Loan Amount",    "field": "OriginalLoanAmount_c"  },  {    "headerText": "Financial Institution",    "field": "FinancialInstitutionName_c"  }]'>
+          </oj-table>
+        </div>
+        <h6>Other Loan</h6>
+        <div class="oj-flex-bar-middle oj-sm-align-self-center">
+          <oj-table scroll-policy="loadMoreOnScroll"
+            data="[[ $flow.variables.OtherLoanADP ]]" id="OtherLoanTable"
+            columns='[{"headerText":"Borrower","field":"Borrower_c"},{"headerText":"Amount Owing","field":"AmountOwing_c"},{"headerText":"Current Limit Or Original Loan Amount","field":"CurrentLimitOrOriginalLoanAmount_c"},{"headerText":"Financial Institution","field":"FinancialInstitutionName_c"}]'>
+          </oj-table>
+        </div>
+      </oj-bind-if>
+    </div>
+  </div>
+</div>

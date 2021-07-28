@@ -1,0 +1,18 @@
+{
+    "chains": {
+        "GetData": {
+            "Test 1": {
+                "mocks": {
+                    "callGetLoan": {
+                        "outcome": "success",
+                        "result": {
+                            "status": 200,
+                            "headers": {},
+                            "body": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+   }
